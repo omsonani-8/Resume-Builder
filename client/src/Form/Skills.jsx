@@ -1,5 +1,7 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 
+// eslint-disable-next-line react/prop-types
 const Skills = ({ skills, setSkills }) => {
   const [temp, setTemp] = useState("");
   const [editIndex, setEditIndex] = useState(null);
@@ -23,6 +25,7 @@ const Skills = ({ skills, setSkills }) => {
   };
 
   const handleRemove = (index) => {
+    // eslint-disable-next-line react/prop-types
     const updatedSkills = skills.filter((_, i) => i !== index);
     setSkills(updatedSkills);
   };
@@ -57,6 +60,7 @@ const Skills = ({ skills, setSkills }) => {
         </button>
       </div>
       <ul className="list-disc pl-5">
+        {/* eslint-disable-next-line react/prop-types */}
         {skills.map((skill, index) => (
           <li key={index} className="mb-2 flex justify-between items-center">
             <span>{skill}</span>

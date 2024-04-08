@@ -23,26 +23,21 @@ import "react-toastify/dist/ReactToastify.css";
 import Export from "./Components/Export.jsx";
 
 const PrivetRoute = () => {
-  console.log("inside privet route");
   const userData = localStorage.getItem("user");
   const token = localStorage.getItem("token");
-  console.log({ token });
+ 
   return token == "true" ? (
-    <>
-      {toast.success("Login Sucessfully")}
-      <Header2></Header2>
-      {console.log("inside outlet  :- ", token)}
-      <Outlet></Outlet>
-    </>
+     <>
+       <Header2></Header2>
+       <Outlet></Outlet>
+     </>
   ) : (
-    <>
-      {toast.success("Logout Sucessfully")}
-      <Header></Header>
-      {console.log("inside outlet  :- ", token)}
-      {<Navigate replace to="/login"></Navigate>}
-    </>
+     <>
+       <Header></Header>
+       <Navigate replace to="/login"></Navigate>
+     </>
   );
-};
+ };
 
 const App = () => {
   // const [isAuthenticated,setAuthenticated] = useState(false);
