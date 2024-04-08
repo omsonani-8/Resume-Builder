@@ -178,7 +178,7 @@ const ResumeBuilder = () => {
       </div>
       <div>
       <div className=" pt-5 p-10  flex justify-center items-center " id="myPage">
-        <div class="font-sans text-gray-800  flex-col items-center ">
+        <div className="font-sans text-gray-800  flex-col items-center ">
           <div className=" flex-col items-center">
             <div className=" w-[850px] p-10 mx-auto bg-gray-100 border-t-8 border-gray-600 border-b-2 border-gray-200">
               <div id="hd" className="mb-8 pb-6 border-b border-gray-300">

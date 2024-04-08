@@ -1,62 +1,101 @@
-// src/Form/Education.jsx
 import React, { useState } from "react";
 
 const Education = ({ education, setEducation }) => {
+  const [newEducation, setNewEducation] = useState({
+    instituteName: "",
+    degree: "",
+    location: "",
+    startDate: "",
+    percentageCGPA: "",
+  });
 
-    const [saveData,setSaveData] = useState({}); 
+  const handleChange = (e) => {
+    setNewEducation({ ...newEducation, [e.target.name]: e.target.value });
+  };
 
-    const save = () => {
-     setEducation(old => [...old, saveData]);
-     
-   }
-   const handleChange = (e) => {
-     setSaveData({ ...saveData, [e.target.name]: e.target.value });
-    //  console.log(saveData);
-   };
-    
+  const addEducation = () => {
+    if (newEducation.instituteName && newEducation.degree && newEducation.startDate) {
+      setEducation([...education, newEducation]);
+      setNewEducation({
+        instituteName: "",
+        degree: "",
+        location: "",
+        startDate: "",
+        percentageCGPA: "",
+      });
+    } else {
+      alert("Please fill all required fields.");
+    }
+  };
 
   return (
-    <div className="mb-4">
-      <h3 className="text-xl mb-2">Education</h3>
-      <input
-        type="text"
-        name="instituteName"
-        placeholder="Institute Name"
-        className="w-full p-2 border border-gray-300 rounded mb-2"
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="degree"
-        placeholder="Degree"
-        className="w-full p-2 border border-gray-300 rounded mb-2"
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="location"
-        placeholder="Location"
-        className="w-full p-2 border border-gray-300 rounded mb-2"
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="startDate"
-        placeholder="Start Date"
-        className="w-full p-2 border border-gray-300 rounded mb-2"
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="percentageCGPA"
-        placeholder="Percentage/CGPA"
-        className="w-full p-2 border border-gray-300 rounded mb-2"
-        onChange={handleChange}
-      />
-       <div className="flex w-full justify-end">
-      {/* <button className="bg-blue-500 text-white px-4 py-2 rounded">Save</button> */}
-      <button onClick={save} className="bg-blue-500 text-white px-4 py-2 rounded">add</button>
-      </div>
+    <div>
+      <h3 className="text-3xl font-bold mb-6">Education</h3>
+      <form className="space-y-6">
+        <div>
+          <label htmlFor="instituteName" className="block text-sm font-medium text-gray-700">Institute Name:</label>
+          <input
+            type="text"
+            name="instituteName"
+            value={newEducation.instituteName}
+            placeholder="Institute Name"
+            className="mt-2 block w-full rounded-md border-2 border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="degree" className="block text-sm font-medium text-gray-700">Degree:</label>
+          <input
+            type="text"
+            name="degree"
+            value={newEducation.degree}
+            placeholder="Degree"
+            className="mt-2 block w-full rounded-md border-2 border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="location" className="block text-sm font-medium text-gray-700">Location:</label>
+          <input
+            type="text"
+            name="location"
+            value={newEducation.location}
+            placeholder="Location"
+            className="mt-2 block w-full rounded-md border-2 border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="startDate" className="block text-sm font-medium text-gray-700">Start Date:</label>
+          <input
+            type="date"
+            name="startDate"
+            value={newEducation.startDate}
+            className="mt-2 block w-full rounded-md border-2 border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="percentageCGPA" className="block text-sm font-medium text-gray-700">Percentage/CGPA:</label>
+          <input
+            type="text"
+            name="percentageCGPA"
+            value={newEducation.percentageCGPA}
+            placeholder="Percentage/CGPA"
+            className="mt-2 block w-full rounded-md border-2 border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="flex justify-end">
+          <button
+            type="button"
+            onClick={addEducation}
+            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md shadow-md transition-colors duration-300"
+          >
+            Add Education
+          </button>
+        </div>
+      </form>
     </div>
   );
 };

@@ -1,38 +1,37 @@
-// src/Form/Projects.jsx
 import React, { useState } from "react";
 
 const Projects = ({ projects, setProjects }) => {
   const [saveData, setSaveData] = useState({});
   const [saveDes, setSaveDes] = useState([]);
-  const [temp , setTemp] = useState("");
+  const [temp, setTemp] = useState("");
   const [temp2, setTemp2] = useState("");
 
-
-  const saveDescription = () =>{
-    setSaveDes([...saveDes,temp])
+  const saveDescription = () => {
+    setSaveDes([...saveDes, temp]);
     setTemp("");
-  }
+  };
 
   const save = () => {
     const projectName = saveData.projectName;
-    setProjects((old) => [...old,{projectName,saveDes}]);
+    setProjects((old) => [...old, { projectName, saveDes }]);
     setSaveDes([]);
-    setTemp2("")    
+    setTemp2("");
   };
+
   const handleChange = (e) => {
     setSaveData({ ...saveData, [e.target.name]: e.target.value });
-    setTemp2(e.target.value)
+    setTemp2(e.target.value);
   };
 
   return (
-    <div className="mb-4">
-      <h3 className="text-xl mb-2">Projects</h3>
+    <div>
+      <h3 className="text-3xl font-bold mb-6">Projects</h3>
       <input
         type="text"
         name="projectName"
         value={temp2}
         placeholder="Add a project Name"
-        className="w-full p-2 border border-gray-300 rounded mb-2"
+        className="block w-full rounded-md border-2 border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 mb-4"
         onChange={handleChange}
       />
       <input
@@ -40,31 +39,27 @@ const Projects = ({ projects, setProjects }) => {
         name="projectDescription"
         placeholder="Add a project Description"
         value={temp}
-        className="w-full p-2 border border-gray-300 rounded mb-2"
-        // onChange={handleChange}
-        onChange={e => setTemp(e.target.value)}
-        onKeyDown={e => {
-          if(e.key === 'Enter'){
-            saveDescription()
+        className="block w-full rounded-md border-2 border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 mb-4"
+        onChange={(e) => setTemp(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            saveDescription();
           }
         }}
       />
-      <ul style={{ listStyle: "disc" }} >
-        {saveDes.map((i) => (
-          <div key={i}    className="ml-4">
-            <li >{i}</li>
-          </div>
+      <ul className="list-disc pl-5 mb-4">
+        {saveDes.map((i, index) => (
+          <li key={index} className="mb-2">
+            {i}
+          </li>
         ))}
       </ul>
       <div className="flex w-full justify-end">
-        {/* <button className="bg-blue-500 text-white px-4 py-2 rounded">
-          Save
-        </button> */}
         <button
           onClick={save}
-          className="bg-blue-500 text-white px-4 py-2 rounded"
+          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md shadow-md transition-colors duration-300"
         >
-          add
+          Add
         </button>
       </div>
     </div>

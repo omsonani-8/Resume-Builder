@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const About = () => {
   return (
     <div className="flex justify-self-center items-center">
-      <div class="font-sans text-gray-800  w-[1000px] h-[4100px] flex-col items-center ml-20 mt-20 mb-12">
+      <div className="font-sans text-gray-800  w-[1000px] h-[4100px] flex-col items-center ml-20 mt-20 mb-12">
         <div id="doc2" className="flex flex-col items-center">
           <div
             id="inner"
