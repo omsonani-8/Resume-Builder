@@ -11,6 +11,7 @@ const Profile = () => {
     <div className="p-2 mt-10">
       {
       <ResumeBuilder />
+      
       }
     </div>
  );

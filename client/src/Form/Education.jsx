@@ -33,7 +33,7 @@ const Education = ({ education, setEducation }) => {
       <h3 className="text-3xl font-bold mb-6">Education</h3>
       <form className="space-y-6">
         <div>
-          <label htmlFor="instituteName" className="block text-sm font-medium text-gray-700">Institute Name:</label>
+          <label htmlFor="instituteName" className="block   -mt-2  text-sm font-medium text-gray-700">Institute Name:</label>
           <input
             type="text"
             name="instituteName"
@@ -44,7 +44,7 @@ const Education = ({ education, setEducation }) => {
           />
         </div>
         <div>
-          <label htmlFor="degree" className="block text-sm font-medium text-gray-700">Degree:</label>
+          <label htmlFor="degree" className="block  -mt-2  text-sm font-medium text-gray-700">Degree:</label>
           <input
             type="text"
             name="degree"
@@ -55,7 +55,7 @@ const Education = ({ education, setEducation }) => {
           />
         </div>
         <div>
-          <label htmlFor="location" className="block text-sm font-medium text-gray-700">Location:</label>
+          <label htmlFor="location" className="block  -mt-2  text-sm font-medium text-gray-700">Location:</label>
           <input
             type="text"
             name="location"
@@ -66,7 +66,7 @@ const Education = ({ education, setEducation }) => {
           />
         </div>
         <div>
-          <label htmlFor="startDate" className="block text-sm font-medium text-gray-700">Start Date:</label>
+          <label htmlFor="startDate" className="block text-sm  -mt-2 font-medium text-gray-700">Start Date:</label>
           <input
             type="date"
             name="startDate"
@@ -76,7 +76,7 @@ const Education = ({ education, setEducation }) => {
           />
         </div>
         <div>
-          <label htmlFor="percentageCGPA" className="block text-sm font-medium text-gray-700">Percentage/CGPA:</label>
+          <label htmlFor="percentageCGPA" className="block  -mt-2  text-sm font-medium text-gray-700">Percentage/CGPA:</label>
           <input
             type="text"
             name="percentageCGPA"

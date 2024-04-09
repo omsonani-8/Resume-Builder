@@ -1,4 +1,3 @@
-import { React, useState } from "react";
 import {
   BrowserRouter,
   Navigate,
@@ -18,33 +17,34 @@ import My_Resume from "./Components/My_Resume.jsx";
 import Home from "./Components/Home.jsx";
 import About from "./Components/About.jsx";
 import Show from "./Components/Show.jsx";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Export from "./Components/Export.jsx";
+import ResumeTemplate from "./Tamplates/ResumeTemplate.jsx";
 
 const PrivetRoute = () => {
   const userData = localStorage.getItem("user");
   const token = localStorage.getItem("token");
- 
+
   return token == "true" ? (
-     <>
-       <Header2></Header2>
-       <Outlet></Outlet>
-     </>
+    <>
+      <Header2></Header2>
+      <Outlet></Outlet>
+    </>
   ) : (
-     <>
-       <Header></Header>
-       <Navigate replace to="/login"></Navigate>
-     </>
+    <>
+      <Header></Header>
+      <Navigate replace to="/login"></Navigate>
+    </>
   );
- };
+};
 
 const App = () => {
   // const [isAuthenticated,setAuthenticated] = useState(false);
   return (
     <div className="flex flex-col min-h-screen">
       <ToastContainer></ToastContainer>
-
+      <ResumeTemplate />
       <BrowserRouter>
         <Header></Header>
         <Routes>
