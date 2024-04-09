@@ -5,7 +5,7 @@ import { FaLinkedin, FaGithub, FaGlobe } from 'react-icons/fa';
 
 const ResumeTemplate = () => {
   const [resumeData, setResumeData] = useState({
-    name: "Jane Doe",
+    name: "om sonani",
     title: "Full-Stack Developer",
     contact: {
       number: "000000000000",
