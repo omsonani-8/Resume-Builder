@@ -1,296 +1,169 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const About = () => {
+  // Define the animation variants
+  const fadeInUpVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <div className="flex justify-self-center items-center">
-      <div className="font-sans text-gray-800  w-[1000px] h-[4100px] flex-col items-center ml-20 mt-20 mb-12">
-        <div id="doc2" className="flex flex-col items-center">
-          <div
-            id="inner"
-            className=" p-5 mx-auto bg-gray-100 border-t-8 border-gray-600 border-b-2 border-gray-200"
-          >
-            {/* hero section */}
-            <div id="hd" className="mb-8 pb-6 border-b border-gray-300">
-              <div className="flex ">
-                <div className="w-full ">
-                  <h1 className="text-6xl uppercase tracking-wider text-gray-800">
-                    Jonathan Doe
-                  </h1>
-                  <h2 className="text-2xl">Web Designer, Director</h2>
-                </div>
-                <div className="w-1/5  ">
-                  <div className="contact-info mt-2">
-                    <div className="flex items-center">
-                      <h3 id="cityvalue" className="inline">
-                        New York
-                      </h3>
-                      <h3 className="inline">, </h3>
-                      <h3 id="countryvalue" className="inline">
-                        USA
-                      </h3>
-                    </div>
-                    <h3
-                      id="emailvalue"
-                      className="text-blue-500 hover:text-blue-700"
-                    >
-                      <a href="mailto:name@yourdomain.com">
-                        name@yourdomain.com
-                      </a>
-                    </h3>
-                    <h3 id="phonevalue">+1 (123) 456-7890</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-            <div id="bd">
-              <div id="yui-main">
-                <div className="flex-col flex-wrap ">
-                  <div className="flex  border-b border-gray-300 ">
-                    <div>
-                      <h2 className="w-[200px] p-5 pr-40  text-2xl font-semibold">
-                        Profile
-                      </h2>
-                    </div>
-                    <div className="p-5 pb-10 w-full">
-                      <p className="text-lg ">
-                        Progressively evolve cross-platform ideas before
-                        impactful infomediaries. Energistically visualize
-                        tactical initiatives before cross-media catalysts for
-                        change.
-                      </p>
-                    </div>
-                  </div>
-                  {/* <div className="flex  border-b border-gray-300 ">
-                    <div className="">
-                      <h2 className=" w-[200px] text-2xl text-center  p-5 pr-40 font-semibold">
-                        Skills
-                      </h2>
-                    </div>
-                    <div className="pt-5 w-full  flex ">
-                      <div className="pt-1 pb-5 pl-5 pr-5 w-[250px] ">
-                        <h2 className="text-2xl font-semibold">Web Design</h2>
-                        <p>
-                          Assertively exploit wireless initiatives rather than
-                          synergistic core competencies.
-                        </p>
-                      </div>
-                      <div className="pt-1 pb-5 pl-5 pr-5 w-[250px]">
-                        <h2 id="skill2" className="text-2xl font-semibold">
-                          Interface Design
-                        </h2>
-                        <p id="skilldis2">
-                          Credibly streamline mission-critical value with
-                          multifunctional functionalities.
-                        </p>
-                      </div>
-                      <div className="pt-1 pb-5 pl-5 pr-5 w-[250px]">
-                        <h2 id="skill3" className="text-2xl font-semibold">
-                          Project Direction
-                        </h2>
-                        <p id="skilldis3">
-                          Proven ability to lead and manage a wide variety of
-                          design and development projects in team and
-                          independent situations.
-                        </p>
-                      </div>
-                    </div>
-                  </div> */}
-                  <div className="w-full flex  border-b border-gray-300 mt-1 mb-2  ">
-                    <div>
-                      <h2 className=" w-[200px] text-2xl p-5 pr-40 font-semibold">
-                        Skills
-                      </h2>
-                    </div>
-                    <div className="pt-2 w-full pl-5 ">
-                      <div className="p-1 border-b border-gray-300">
-                        <ul className="flex justify-around">
-                          <li className="w-[150px]">HTML</li>
-                          <li className="w-[150px]">CSS</li>
-                          <li className="w-[150px]">Javascript</li>
-                        </ul>
-                      </div>
-                      <div className="p-1 pt-2 border-b border-gray-300">
-                        <ul className="talent  flex justify-around">
-                          <li className="w-[150px]">Jquery</li>
-                          <li className="w-[150px]">PHP</li>
-                          <li className="w-[150px]">CVS / Subversion</li>
-                        </ul>
-                      </div>
-                      <div className="p-1  border-b ">
-                        <ul className="flex justify-around">
-                          <li className="w-[150px]">OS X</li>
-                          <li className="w-[150px]">Windows XP/Vista</li>
-                          <li className="w-[150px]">Linux</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="w-full flex border-b border-gray-300 pb-8 ">
-                    <div>
-                      <h2 className=" w-[200px] p-5 pr-32 text-2xl font-semibold">
-                        Experience
-                      </h2>
-                    </div>
-                    <div className="flex-col w-full  p-5">
-                      <div className=" pt-5 w-full   border-b border-gray-300">
-                        <div className="flex justify-between   ">
-                          <div className="">
-                            <h2 className=" text-2xl font-semibold">
-                              Facebook
-                            </h2>
-                            <h3 id="role1">Senior Interface Designer</h3>
-                          </div>
-                          <div className="flex p-5">
-                            <h4 className="syears" id="jstarte1">
-                              2005
-                            </h4>
-                            <h4 className="desh">-</h4>
-
-                            <h4 id="jsende1">2007</h4>
-                          </div>
-                        </div>
-                        <div>
-                          <p id="jobdis1" className="pb-10">
-                            Intrinsicly enable optimal core competencies through
-                            corporate relationships. Phosfluorescently implement
-                            worldwide vortals and client-focused imperatives.
-                            Conveniently initiate virtual paradigms and top-line
-                            convergence.
-                          </p>
-                        </div>
-                      </div>
-                      {/* <div className="border-b border-gray-300 ">
-                        <div className="flex justify-between ">
-                          <div className="">
-                            <h2 className=" text-2xl font-semibold">
-                              Facebook
-                            </h2>
-                            <h3 id="role1">Senior Interface Designer</h3>
-                          </div>
-                          <div className="flex p-5">
-                            <h4 className="syears" id="jstarte1">
-                              2005
-                            </h4>
-                            <h4 className="desh">-</h4>
-                            <h4 id="jsende1">2007</h4>
-                          </div>
-                        </div>
-                        <div>
-                          <p id="jobdis1" className="pb-10">
-                            Intrinsicly enable optimal core competencies through
-                            corporate relationships. Phosfluorescently implement
-                            worldwide vortals and client-focused imperatives.
-                            Conveniently initiate virtual paradigms and top-line
-                            convergence.
-                          </p>
-                        </div>
-                      </div> */}
-                    </div>
-                  </div>
-                  <div className="flex w-full border-b border-gray-300">
-                      <div className="">
-                        <h2 className="w-[200px] p-5 pr-32 text-xl font-semibold">
-                          Education
-                        </h2>
-                      </div>
-                     
-                        <div>
-                          <div className="flex w-full border-b border-gray-300">
-                            <div className="w-full pt-5 pb-1 mb-4 p-5  flex-col border-b border-gray-300">
-                              <div>
-                                <h2 id="Coursename1" className="inline">
-                                  2015-2020
-                                </h2>
-                              </div>
-                              <div>
-                                <h2 id="Coursename1" className="inline">
-                                  Indiana University - Bloomington, Indiana
-                                </h2>
-                              </div>
-                              <div>
-                                <h2 id="feildname1" className="inline">
-                                  b.tech -
-                                </h2>
-                                <h3 className="inline"> Grade=</h3>
-                                <h3 className="inline">
-                                  <strong id="cgpa1">7.8</strong>
-                                </h3>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                  <div className="w-full flex">
-                    <div className="">
-                      <h2 className=" w-[200px]  p-5 pr-32 text-2xl font-semibold">
-                        Project
-                      </h2>
-                    </div>
-                    <div className="flex-col w-full p-10 pt-5">
-                      <div className="w-full  ">
-                        <h2 className="text-2xl font-semibold mb-5">
-                          Hu Chu Gujarati-News website
-                        </h2>
-                        <ul style={{ listStyle: "disc" }}>
-                          <li>
-                            The "Hu Chu Gujarati" news website is a modern and
-                            dynamic platform designed to provide the latest news
-                            and updates in the Gujarati language.
-                          </li>
-                          <li>
-                            The website is built using cutting-edge technologies
-                            such as React.js for the frontend, Node.js for the
-                            backend, and MySQL for data storage.
-                          </li>
-                          <li>
-                            It includes a robust admin panel to manage user
-                            roles and ensure accessibility control.
-                          </li>
-                          <li>
-                            Admin can easily add, edit, or delete news articles
-                            through a secure and userfriendly admin panel.
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="w-full mt-5">
-                        <h2 className="text-2xl font-semibold mb-5">
-                          Ecommerce Website
-                        </h2>
-                        <ul style={{ listStyle: "disc" }}>
-                          <li>
-                            The "Modern Ecommerce Website" is an advanced online
-                            shopping platform built with cutting-edge
-                            technologies such as React.js, Redux, Redux Saga,
-                            Tailwind CSS, HTML, and CSS.
-                          </li>
-                          <li>
-                            A clean and user-friendly interface with intuitive
-                            navigation and responsive design for various devices
-                            and screen sizes.
-                          </li>
-                          <li>
-                            It includes a robust admin panel to manage user
-                            roles and ensure accessibility control.
-                          </li>
-                          It provides a seamless and visually appealing shopping
-                          experience for users, along with robust state
-                          management and efficient asynchronous operations.
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div className="about flex  flex-col items-center justify-center min-h-screen bg-gray-100 py-2">
+      <motion.div
+        className="about-container w-[1100px] h-[400px] max-w-2xl px-8 py-4 mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800"
+        initial="hidden"
+        animate="visible"
+        variants={fadeInUpVariants}
+        transition={{ duration: 0.8 }}
+      >
+        {/* <div className="about-title  text-center flex justify-center md:justify-end"> */}
+          <h2 className="text-2xl text-center font-bold text-primary dark:text-white md:text-3xl">About Our Resume Builder</h2>
+        
+        <div className="about-content mt-4">
+          <p className="text-gray-600 dark:text-gray-400">
+            Our Resume Builder is designed to help you create a professional and eye-catching resume with ease. With a user-friendly interface and a wide range of templates, you can customize your resume to match your career goals and personal style.
+          </p>
+          <p className="mt-4 text-gray-600 dark:text-gray-400">
+            Whether you're a fresh graduate or an experienced professional, our tool offers a variety of features to help you stand out. From customizing your contact information and work experience to adding your education and skills, our Resume Builder is the perfect companion for your job search.
+          </p>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
 
 export default About;
+
+// 
+
+// import React from 'react';
+// // import '@fortawesome/fontawesome-free/css/all.min.css'; // Ensure to import font-awesome
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+// const About = () => {
+//  // Detailed dummy data for the resume
+//  const resumeData = {
+//     name: "John Doe",
+//     role: "Full Stack Developer",
+//     contacts: {
+//       phone: "+1234567890",
+//       email: "john.doe@example.com",
+//       location: "San Francisco, USA"
+//     },
+//     skills: ["React", "Node.js", "Express", "MongoDB", "TypeScript", "Docker", "GraphQL", "Apollo Server", "Next.js", "Redux", "Webpack", "Babel"],
+//     achievements: [
+//       "React Developer of the Year 2020",
+//       "Contributed to Open Source Projects",
+//       "Speaker at JSConf 2021",
+//       "React Developer of the Year 2020",
+//       "Contributed to Open Source Projects",
+//       "Speaker at JSConf 2021",
+//       "React Developer of the Year 2020",
+//       "Contributed to Open Source Projects",
+//       "Speaker at JSConf 2021",
+//       "Featured in Full Stack Developer Magazine"
+//     ],
+//     experiences: [
+//       {
+//         role: "Senior Full Stack Developer",
+//         company: "Tech Solutions Inc.",
+//         period: "2020 - Now",
+//         description: "Developed and maintained code for in-house and client websites primarily using React, Node.js, and MongoDB. Led a team of developers in implementing new features and optimizing existing systems."
+//       },
+//       {
+//         role: "Full Stack Developer",
+//         company: "Innovate Tech Solutions",
+//         period: "2015 - 2020",
+//         description: "Worked on a variety of projects, including web and mobile applications, using modern technologies like React, Node.js, and MongoDB. Contributed to the development of a highly scalable e-commerce platform."
+//       },
+//       {
+//         role: "Junior Developer",
+//         company: "Startup Hub",
+//         period: "2013 - 2015",
+//         description: "Contributed to the development of a web-based project management tool, gaining experience in full-stack development."
+//       }
+//     ],
+//     education: [
+//       {
+//         course: "B.Sc. Computer Science",
+//         institution: "University of California",
+//         period: "2015 - 2019",
+//         grade: "A+"
+//       },
+//       {
+//         course: "Certification in Full Stack Development",
+//         institution: "Codecademy",
+//         period: "2020",
+//         grade: "A"
+//       },
+//       {
+//         course: "Certification in Web Development",
+//         institution: "FreeCodeCamp",
+//         period: "2019",
+//         grade: "A"
+//       }
+//     ],
+//     profile: "John Doe is a passionate Full Stack Developer with over 5 years of experience in the tech industry. He specializes in building scalable and efficient web applications using modern technologies like React, Node.js, and MongoDB. John is also an active contributor to the open-source community and has spoken at several tech conferences. He has a strong background in computer science, with a focus on software development and web technologies."
+//  };
+
+//  return (
+//     <div className="bg-gray-300 mt-[200px] mb-[300px]  h-screen flex justify-center items-center">
+    
+//       <div className="bg-white  shadow-lg w-3/4">
+//         <div className="bg-gray-900 text-center py-5">
+//           <p className="text-white text-4xl font-bold">{resumeData.name}</p>
+//           <p className="text-gray-400 text-xl">{resumeData.role}</p>
+//         </div>
+//         <div className="flex">
+//           <div className="w-1/3 p-5">
+//             <div className="pl-10">
+//               <p className="font-semibold text-xl mb-4">Contact</p>
+//               <p className="text-gray-500 mb-2"><i className="fas fa-phone mr-2"></i><span>{resumeData.contacts.phone}</span></p>
+//               <p className="text-gray-500 mb-2"><i className="fas fa-envelope mr-2"></i><span>{resumeData.contacts.email}</span></p>
+//               <p className="text-gray-500"><i className="fas fa-home mr-2"></i><span>{resumeData.contacts.location}</span></p>
+
+//               <p className="font-semibold text-xl my-4">My Skills</p>
+//               <ul>
+//                 {resumeData.skills.map(skill => (
+//                  <li className="text-gray-500 py-1" key={skill}>{skill}</li>
+//                 ))}
+//               </ul>
+
+//               <p className="font-semibold text-xl my-4">Achievement</p>
+//               {resumeData.achievements.map(achievement => (
+//                 <p className="text-gray-500" key={achievement}>{achievement}</p>
+//               ))}
+//             </div>
+//           </div>
+//           <div className="border-l-2 border-gray-400 mx-5"></div>
+//           <div className="w-2/3 p-5">
+//             <p className="font-semibold text-xl">Experience</p>
+//             {resumeData.experiences.map((experience, index) => (
+//               <div key={index}>
+//                 <p className="text-black">{experience.role} at {experience.company} ({experience.period})</p>
+//                 <p className="text-gray-500 text-sm">{experience.description}</p>
+//               </div>
+//             ))}
+
+//             <p className="font-semibold text-xl mt-4">Education</p>
+//             {resumeData.education.map((education, index) => (
+//               <div key={index}>
+//                 <p className="text-black">{education.course}, {education.institution} ({education.period})</p>
+//                 <p className="text-gray-500 text-sm">Grade: {education.grade}</p>
+//               </div>
+//             ))}
+
+//             <p className="font-semibold text-xl mt-4">Profile</p>
+//             <p className="text-gray-500 text-sm mb-4">{resumeData.profile}</p>
+
+//             {/* <button className="bg-orange-500 text-black py-2 px-6 rounded-full mt-4 float-right">Download</button> */}
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//  );
+// };
+
+// export default About;
+

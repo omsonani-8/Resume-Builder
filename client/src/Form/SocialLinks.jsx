@@ -3,6 +3,7 @@ import React from 'react';
 const SocialLinks = ({ socialLinks, setSocialLinks }) => {
    const handleChange = (e) => {
       setSocialLinks({ ...socialLinks, [e.target.name]: e.target.value });
+      console.log(socialLinks);
    };
 
    return (

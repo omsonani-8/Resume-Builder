@@ -44,7 +44,7 @@ const App = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <ToastContainer></ToastContainer>
-      <ResumeTemplate />
+      {/* <ResumeTemplate /> */}
       <BrowserRouter>
         <Header></Header>
         <Routes>
@@ -52,7 +52,6 @@ const App = () => {
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/" element={<PrivetRoute></PrivetRoute>}>
             <Route path="/" element={<Home> </Home>}></Route>
-            {/* <Route path="/" element={<Home> </Home>}></Route>  */}
             <Route path="/profile" element={<Profile />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/about" element={<About />} />

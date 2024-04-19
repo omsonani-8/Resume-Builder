@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+import Spinner from "./Spinner";
 
 function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [islogin , setLogin] = useState(0);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,7 +23,8 @@ function Login() {
           localStorage.setItem("id", response?.data?.user?._id);
           localStorage.setItem("userName", response?.data?.user?.name);
           localStorage.setItem("email", response?.data?.user?.email);
-
+          
+          setLogin(1);
           // Show a toast message indicating successful login
           toast.success("Login Successfully");
 
@@ -39,8 +42,8 @@ function Login() {
 
   return (
     <>
-
-      <div className="min-h-full flex flex-col justify-center py-12 sm:px-6 lg:px-8 mt-14 mb-14">
+    {
+      (<div className="min-h-full flex flex-col justify-center py-12 sm:px-6 lg:px-8 mt-14 mb-14">
         <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
           <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
             <div className="text-center mb-3 font-bold text-2xl">Login</div>
@@ -194,6 +197,10 @@ function Login() {
           </div>
         </div>
       </div>
+      )
+
+}
+      
     </>
   );
 }

@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="bg-gray-800 text-white p-4 relative   fixed bottom-0 w-full">
       <div className="container mx-auto flex justify-between items-center">
         <div>
-          &copy; {currentYear} Your Company Name
+          &copy; {currentYear} Resume Builder
         </div>
         <div className="flex space-x-4">
           {/* Facebook Icon */}

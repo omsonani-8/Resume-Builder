@@ -31,7 +31,13 @@ const userResume = new mongoose.Schema({
     },
   ],
   skills: [String],
-  achievements: String,
+  achievements: [
+    {
+      title:String,
+      date:String,
+      description:String,
+    },
+  ],
   projects: [
     {
       projectName: String,
@@ -54,6 +60,10 @@ const userResume = new mongoose.Schema({
     type: String,
     trim: true,
   },
+  resumeName:{
+    type: String,
+    trim: true,
+  }
 });
 
 module.exports = mongoose.model("userResume", userResume);

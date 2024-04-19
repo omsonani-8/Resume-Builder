@@ -17,6 +17,7 @@
     "antd": "^5.15.3",
     "axios": "^1.6.8",
     "events": "^3.3.0",
+    "framer-motion": "^11.0.28",
     "html-to-image": "^1.11.11",
     "html-to-pdfmake": "^2.5.6",
     "html2canvas": "^1.4.1",
