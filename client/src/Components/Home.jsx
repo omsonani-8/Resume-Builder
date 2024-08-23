@@ -1,7 +1,7 @@
 import React from "react";
 import resume_1 from "../assets/resume-1.png";
-import resume_2 from "../assets/resume_2.png";
-import resume_3 from "../assets/resume_3.png";
+import resume_2 from "../assets/resume-2.png";
+import resume_3 from "../assets/resume.png";
 import { useNavigate } from "react-router-dom";
 
 const Cards = ({i}) => {
