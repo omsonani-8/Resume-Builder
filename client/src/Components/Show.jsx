@@ -4,6 +4,7 @@ import ResumeTemplate from "../Tamplates/ResumeTemplate";
 import Template1 from "../Tamplates/Template1";
 import { ReactToPrint } from "react-to-print";
 
+
 function Show() {
   const retrievedDataString = localStorage.getItem("userResume");
   const retrievedData = JSON.parse(retrievedDataString);
@@ -15,6 +16,7 @@ function Show() {
   const data = retrievedData.filter((data) => {
     return data._id === USERid;
   });
+
 
   const [basicInfo1, setBasicInfo] = useState({});
   const [education1, setEducation] = useState([]);
@@ -104,7 +106,7 @@ function Show() {
             );
 
           default:
-            console.log("hello");
+            console.log("hello world");
         }
       })()}
     </>
