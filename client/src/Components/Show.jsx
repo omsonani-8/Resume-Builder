@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import ResumeTemplate from "../Tamplates/ResumeTemplate";
 import Template1 from "../Tamplates/Template1";
@@ -104,11 +104,14 @@ function Show() {
             );
 
           default:
-            console.log("hello");
+            console.log("hello om sonani ");
         }
       })()}
     </>
   );
 }
 
+
 export default Show;
+
+

@@ -35,7 +35,7 @@ const ResumeBuilder = () => {
   const _userId = localStorage.getItem("id");
   const Resumeid = localStorage.getItem("resumeId");
   const _id = Resumeid;
-  
+
   const userData = {
     basicInfo: basicInfo,
     education: education,

@@ -4,7 +4,6 @@ import resume_2 from '../assets/resume_2.png';
 import resume_3 from '../assets/resume_3.png';
 import axios from 'axios';
 import {  useNavigate } from "react-router-dom";
-import { Button } from 'antd';
 import Spinner from './Spinner';
 
 const Card = ({id,name}) => {
