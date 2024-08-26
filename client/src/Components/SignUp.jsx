@@ -20,7 +20,7 @@ function Signup() {
   };
   const userSignin = async () => {
     await axios
-      .post("http://localhost:3002/api/v1/registaion/user", {name,email,password })
+      .post("https://resume-builder-backend-l6mu.onrender.com/api/v1/registaion/user", {name,email,password })
       .then((response) => {
         console.log(response);
       })
