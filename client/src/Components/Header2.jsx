@@ -21,7 +21,7 @@ export const Header2 = () => {
 
             <a
                 href="/logout"
-                className="inline-flex items-center px-4 py-2 bg-white border  border-gray-300 rounded-md font-semibold text-xs uppercase tracking-widest">
+                className="inline-flex items-center px-4 py-2 bg-white border border border-gray-300 rounded-md font-semibold text-xs uppercase tracking-widest">
               Logout
             </a>
             <DropdownButton className="md:hidden" />
