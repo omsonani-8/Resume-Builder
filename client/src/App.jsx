@@ -20,7 +20,7 @@ import Show from "./Components/Show.jsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Export from "./Components/Export.jsx";
-import ResumeTemplate from "./Tamplates/ResumeTemplate.jsx";
+import ResumeTemplate from "./Templates/ResumeTemplate.jsx";
 
 const PrivetRoute = () => {
   const userData = localStorage.getItem("user");
