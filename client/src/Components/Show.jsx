@@ -4,6 +4,7 @@ import ResumeTemplate from "../Tamplates/ResumeTemplate";
 import Template1 from "../Tamplates/Template1";
 import { ReactToPrint } from "react-to-print";
 
+
 function Show() {
   const retrievedDataString = localStorage.getItem("userResume");
   const retrievedData = JSON.parse(retrievedDataString);
@@ -15,6 +16,7 @@ function Show() {
   const data = retrievedData.filter((data) => {
     return data._id === USERid;
   });
+
 
   const [basicInfo1, setBasicInfo] = useState({});
   const [education1, setEducation] = useState([]);
@@ -29,8 +31,11 @@ function Show() {
     setEducation(data[0].education);
     setWorkExperience(data[0].workExperience);
     setSkills(data[0].skills);
+    setAchievements([]);
+    setSocialLinks([]);
     setProjects(data[0].projects);
   }, []);
+  console.log(data);
 
   const pageStyle = `@media print {
       @page {
@@ -102,9 +107,6 @@ function Show() {
                 </div>
               </div>
             );
-
-          default:
-            console.log("hello om sonani ");
         }
       })()}
     </>
