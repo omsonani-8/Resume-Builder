@@ -9,5 +9,4 @@ require("dotenv").config();
     }).then(()=>{console.log("connection is establish successful")})
     .catch((err)=>{console.log(err)})
 }
-
 module.exports = connectdb;
