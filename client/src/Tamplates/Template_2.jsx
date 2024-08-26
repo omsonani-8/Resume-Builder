@@ -10,6 +10,7 @@ const Template_2 = ({
   projects,
   socialLinks,
 }) => {
+  console.log(education);
   // Detailed dummy data for the resume
   const resumeData = {
     name: "John Doe",
@@ -264,7 +265,7 @@ const Template_2 = ({
                   <p className="text-gray-600 text-sm">
                     {project.descriptions.map((proj, index) => (
                       <li key={index} style={{ listStyle: "disc" }}>
-                        {proj}
+                        {project.descriptions}
                       </li>
                     ))}
                   </p>
@@ -299,17 +300,49 @@ const Template_2 = ({
             <p className="font-semibold text-xl mt-4 text-gray-800">
               Education
             </p>
-            {resumeData.education.map((education, index) => (
+           {
+               education.length !== 0 ? (
+              
+                education.map((education, index) => (
               <div key={index} className="mb-4">
                 <p className="text-black font-semibold">
-                  {education.course}, {education.institution} (
-                  {education.period})
+                  {education.degree}, {education.instituteName},{education.location} (
+                  {education.startDate})
                 </p>
                 <p className="text-gray-600 text-sm">
-                  Grade: {education.grade}
+                  Grade: {education.percentageCGPA}
                 </p>
               </div>
-            ))}
+            ))
+          
+            ) : (
+            
+              <div  className="mb-4">
+                <p className="text-black font-semibold">
+                B.Sc. Computer Science,University of California, Berkeley (2015 - 2019)
+                </p>
+                <p className="text-gray-600 text-sm">
+                A+
+                </p>
+                <p className="text-black font-semibold">
+                B.Sc. Computer Science,University of California, Berkeley (2015 - 2019)
+                </p>
+                <p className="text-gray-600 text-sm">
+                A+
+                </p>
+                <p className="text-black font-semibold">
+                B.Sc. Computer Science,University of California, Berkeley (2015 - 2019)
+                </p>
+                <p className="text-gray-600 text-sm">
+                A+
+                </p>
+              </div>
+            
+          
+            )
+          }
+
+
           </div>
         </div>
       </div>

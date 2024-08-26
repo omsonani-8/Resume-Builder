@@ -49,7 +49,7 @@ const My_Resume = () => {
         const fetchData = async () => {
             try {
                 const userId = localStorage.getItem('id');
-                const response = await axios.post("http://localhost:3002/api/v1/user/allResume", { userId: userId });
+                const response = await axios.post("https://resume-builder-backend-l6mu.onrender.com/api/v1/user/allResume", { userId: userId });
                     // localStorage.setItem('show',1);
                     console.log(response.data.data);
                     const dataString = JSON.stringify(response.data.data);
