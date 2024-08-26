@@ -14,7 +14,7 @@ function Login() {
     e.preventDefault();
 
     const data = await axios
-      .post("http://localhost:3002/api/v1/login", { email, password })
+      .post("https://resume-builder-backend-l6mu.onrender.com/api/v1/login", { email, password })
       .then((response) => {
         if (response.data.success) {
           localStorage.setItem("user", response.data.token);
