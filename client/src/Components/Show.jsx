@@ -36,6 +36,7 @@ function Show() {
     setProjects(data[0].projects);
   }, []);
   console.log(data);
+  console.log(data);
 
   const pageStyle = `@media print {
       @page {
