@@ -236,6 +236,53 @@ const ResumeTemplate = ({
           </div>
         </div>
 
+        {/* projects */}
+        <div className="flex items-center mt-8 mb-8">
+          <div className="flex-1 border-l-2 border-gray-300 pl-4">
+            <h2 className="text-xl font-bold mb-4 text-gray-900">
+            Projects
+            </h2>
+            <div className="space-y-4">
+              {projects.length !== 0 ? (
+                projects.map((pro, index) => (
+                  <div key={index}>
+                    <h3 className=" font-semibold text-gray-900">
+                      {pro.projectName}
+                    </h3>
+                    {/* <p className="text-gray-600">
+                      {work.employer} | {work.startDate}
+                    </p> */}
+                    <p className="text-gray-700 mb-2">
+                    {pro.descriptions.map((proj, index) => (
+                                <li key={index} style={{ listStyle: "disc" }}>
+                                  {proj}
+                                </li>
+                              ))}
+                    </p>
+                  </div>
+                ))
+              ) : (
+                <div>
+                  <h3 className=" font-bold text-gray-900">
+                  Hu Chu Gujarati-News website
+                  </h3>
+                            <li> The &quot Hu Chu Gujarati &quot news website is a
+                              modern and dynamic platform designed to provide
+                              the latest news and updates in the Gujarati
+                              language.
+                              </li>
+                              <li>
+                              The website is built using cutting-edge
+                              technologies such as React.js for the frontend,
+                              Node.js for the backend, and MySQL for data
+                              storage.
+                            </li>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+
         {/* Achievements */}
         <div className="flex items-center mt-8 mb-8">
           <div className="flex-1 border-l-2 border-gray-300 pl-4">
@@ -275,7 +322,7 @@ const ResumeTemplate = ({
         </div>
 
         {/* Languages */}
-        <div className="flex items-center mt-8 mb-8">
+        {/* <div className="flex items-center mt-8 mb-8">
           <div className="flex-1 border-l-2 border-gray-300 pl-4">
             <h2 className="text-xl font-bold mb-4 text-gray-900">Languages</h2>
             <div className="grid grid-cols-3 gap-4 text-gray-700">
@@ -287,7 +334,7 @@ const ResumeTemplate = ({
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Skills */}
         <div className="flex items-center mt-8 mb-8">

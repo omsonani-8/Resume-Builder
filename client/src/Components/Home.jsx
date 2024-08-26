@@ -90,7 +90,7 @@ const Home = () => {
         },
         {
             question: "What file formats can I download my resume in?",
-            answer: "You can download your completed resume in PDF format, ensuring compatibility with various application systems and employer preferences."
+            answer: "You can download your completed resume in PDF, DOCX, and TXT formats, ensuring compatibility with various application systems and employer preferences."
         },
         {
             question: "Is it possible to update my resume after I've created it?",

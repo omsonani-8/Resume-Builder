@@ -49,57 +49,8 @@ const ResumeBuilder = () => {
     username: fullName,
     resumeName: resumeName,
   };
-  //     const userData = {
-  //  "basicInfo": {
-  //     "address": "123 Main St",
-  //     "email": "johndoe@example.com",
-  //     "fullName": "John Doe",
-  //     "mobileNumber": "1234567890",
-  //     "profile": "Software Developer with 5 years of experience.",
-  //     "title": "Software Developer"
-  //  },
-  //  "education": [
-  //     {
-  //       "degree": "Bachelor of Science in Computer Science",
-  //       "instituteName": "XYZ University",
-  //       "location": "New York, NY",
-  //       "percentageCGPA": "85%",
-  //       "startDate": "2015-08-01"
-  //     }
-  //  ],
-  //  "workExperience": [
-  //     {
-  //       "description": "Developed web applications using React and Node.js.",
-  //       "employer": "ABC Company",
-  //       "jobTitle": "Software Engineer",
-  //       "startDate": "2018-06-01"
-  //     }
-  //  ],
-  //  "skills": [
-  //     "JavaScript",
-  //     "React",
-  //     "Node.js",
-  //     "MongoDB"
-  //  ],
-  //  "achievements": "Won the XYZ Hackathon in 2020.",
-  //  "projects": [
-  //     {
-  //       "projectName": "Project ABC",
-  //       "saveDes": [
-  //         "A web application for managing tasks.",
-  //         "Implemented user authentication and task management features."
-  //       ]
-  //     }
-  //  ],
-  //  "socialLinks": {
-  //     "linkedIn": "https://www.linkedin.com/in/johndoe",
-  //     "github": "https://github.com/johndoe",
-  //     "twitter": "https://twitter.com/johndoe"
-  //  },"id":
-  //     "123@resume",
-  //     "username":"om _ sonani",
-  //     "userId":"660ec796df8eee7f5a27ef04"
-  // }
+  console.log(socialLinks);
+  
 
   const saveResume = async (e) => {
     console.log(userData);
@@ -130,10 +81,7 @@ const ResumeBuilder = () => {
         }
       }`;
 
-  const handleSave = () => {
-    // Here you can handle the save logic, e.g., save the resume name
-    // Close the dialog after saving
-  };
+ 
 
   return (
     <div className="flex ml-2 mt-10 relative">
