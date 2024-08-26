@@ -24,7 +24,7 @@ export function Login() {
 
   const log_in = () => {
     axios
-      .post("http://localhost:3002/api/v1/login", { email, password })
+      .post("https://resume-builder-backend-l6mu.onrender.com/api/v1/login", { email, password })
       .then((response) => {
         console.log(response);
       })
