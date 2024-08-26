@@ -1,112 +1,115 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import ResumeTemplate from "../Templates/ResumeTemplate";
 import Template1 from "../Templates/Template1";
 import { ReactToPrint } from "react-to-print";
 
+
 function Show() {
-    const { id } = useParams(); // Extracts the resume ID from the URL
-    const [resumeData, setResumeData] = useState(null);
-    const [loading, setLoading] = useState(true);
+  const retrievedDataString = localStorage.getItem("userResume");
+  const retrievedData = JSON.parse(retrievedDataString);
+  console.log(retrievedData);
+  const location = useLocation();
+  console.log({ location });
+  console.log(location.pathname.split("/"));
+  const USERid = location.pathname.split("/")[2];
+  const data = retrievedData.filter((data) => {
+    return data._id === USERid;
+  });
 
-    useEffect(() => {
-        const fetchResumeDetails = async () => {
-            try {
-                setLoading(true);
-                const response = await axios.get(`http://localhost:3002/api/v1/user/resume/${id}`);
-                setResumeData(response.data);
-                setLoading(false);
-            } catch (error) {
-                console.error("Error fetching resume details:", error);
-                setLoading(false);
-            }
-        };
+  const [basicInfo1, setBasicInfo] = useState({});
+  const [education1, setEducation] = useState([]);
+  const [workExperience1, setWorkExperience] = useState([]);
+  const [skills1, setSkills] = useState([]);
+  const [achievements1, setAchievements] = useState([]);
+  const [projects1, setProjects] = useState([]);
+  const [socialLinks1, setSocialLinks] = useState({});
 
-        fetchResumeDetails();
-    }, [id]);
+  useEffect(() => {
+    setBasicInfo(data[0].basicInfo);
+    setEducation(data[0].education);
+    setWorkExperience(data[0].workExperience);
+    setSkills(data[0].skills);
+    setProjects(data[0].projects);
+  }, []);
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
-
-    if (!resumeData) {
-        return <div>No resume details found.</div>;
-    }
-
-    const pageStyle = `@media print {
+  const pageStyle = `@media print {
       @page {
           size:9.5in 13.5in
       }
     }`;
 
-    return (
-        <>
-            {(() => {
-                switch (resumeData.id) {
-                    case "0":
-                        return (
-                            <div className="flex justify-center mt-16 relative">
-                                <div>
-                                    <Template1
-                                        id="myPage"
-                                        basicInfo={resumeData.basicInfo}
-                                        education={resumeData.education}
-                                        workExperience={resumeData.workExperience}
-                                        skills={resumeData.skills}
-                                        achievements={resumeData.achievements}
-                                        projects={resumeData.projects}
-                                        socialLinks={resumeData.socialLinks}
-                                    ></Template1>
-                                </div>
-                                <div className="fixed top-24 right-36 mt-8">
-                                    <ReactToPrint
-                                        pageStyle={pageStyle}
-                                        trigger={() => (
-                                            <button className="bg-blue-500 h-14 text-sm hover:bg-blue-700 text-white font-bold px-2 py-1 rounded">
-                                                Print Resume
-                                            </button>
-                                        )}
-                                        content={() => document.getElementById("myPage")}
-                                    />
-                                </div>
-                            </div>
-                        );
-                    case "1":
-                        return (
-                            <div className="flex justify-center items-center mt-20 relative">
-                                <div>
-                                    <ResumeTemplate
-                                        id="myPage"
-                                        basicInfo={resumeData.basicInfo}
-                                        education={resumeData.education}
-                                        workExperience={resumeData.workExperience}
-                                        skills={resumeData.skills}
-                                        achievements={resumeData.achievements}
-                                        projects={resumeData.projects}
-                                        socialLinks={resumeData.socialLinks}
-                                    ></ResumeTemplate>
-                                </div>
-                                <div className="fixed top-24 right-36 mt-8">
-                                    <ReactToPrint
-                                        pageStyle={pageStyle}
-                                        trigger={() => (
-                                            <button className="bg-blue-500 h-14 text-sm hover:bg-blue-700 text-white font-bold px-2 py-1 rounded">
-                                                Print Resume
-                                            </button>
-                                        )}
-                                        content={() => document.getElementById("myPage")}
-                                    />
-                                </div>
-                            </div>
-                        );
+  console.log(data[0].id);
 
-                    default:
-                        return <div>Invalid template selected.</div>;
-                }
-            })()}
-        </>
-    );
+  return (
+    <>
+      {(() => {
+        switch (data[0].id) {
+          case "0":
+            console.log("tem-1");
+            return (
+              <div className="flex justify-center mt-16 relative">
+                <div>
+                  <Template1
+                    id="myPage"
+                    basicInfo={basicInfo1}
+                    education={education1}
+                    workExperience={workExperience1}
+                    skills={skills1}
+                    achievements={achievements1}
+                    projects={projects1}
+                    socialLinks={socialLinks1}
+                  ></Template1>
+                </div>
+                <div className="fixed top-24 right-36 mt-8">
+                  <ReactToPrint
+                    pageStyle={pageStyle}
+                    trigger={() => (
+                      <button className="bg-blue-500 h-14 text-sm hover:bg-blue-700 text-white font-bold px-2 py-1 rounded">
+                        Print Resume
+                      </button>
+                    )}
+                    content={() => document.getElementById("myPage")}
+                  />
+                  </div>
+
+              </div>
+            );
+          case "1":
+            return (
+              <div className="flex justify-center items-center mt-20 relative">
+                <div>
+                  <ResumeTemplate
+                    id="myPage"
+                    basicInfo={basicInfo1}
+                    education={education1}
+                    workExperience={workExperience1}
+                    skills={skills1}
+                    achievements={achievements1}
+                    projects={projects1}
+                    socialLinks={socialLinks1}
+                  ></ResumeTemplate>
+                </div>
+                <div className="fixed top-24 right-36 mt-8">
+                  <ReactToPrint
+                    pageStyle={pageStyle}
+                    trigger={() => (
+                      <button className="bg-blue-500 h-14 text-sm hover:bg-blue-700 text-white font-bold px-2 py-1 rounded">
+                        Print Resume
+                      </button>
+                    )}
+                    content={() => document.getElementById("myPage")}
+                  />
+                </div>
+              </div>
+            );
+
+          default:
+            console.log("hello world");
+        }
+      })()}
+    </>
+  );
 }
 
 export default Show;
