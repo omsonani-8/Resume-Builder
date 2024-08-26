@@ -5,7 +5,7 @@ const userRouter = require('./routes/userRouter');
 
 const app = express(); 
 require("dotenv").config();
-const PORT = 3002; 
+const PORT = process.env.PORT || 3002; 
 
 
 app.use(express.json());
