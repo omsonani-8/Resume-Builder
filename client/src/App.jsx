@@ -54,7 +54,7 @@ const App = () => {
             <Route path="/" element={<Home> </Home>}></Route>
             <Route path="/profile" element={<Profile />} />
             <Route path="/logout" element={<Logout />} />
-            <Route path="https://resume-builder-tau-pink.vercel.app/about" element={<About />} />
+            <Route path="/about" element={<About />} />
             <Route path="/myresume" element={<My_Resume />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/dow" element={<Export />} />
