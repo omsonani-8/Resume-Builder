@@ -46,7 +46,7 @@ const App = () => {
       <ToastContainer></ToastContainer>
       {/* <ResumeTemplate /> */}
       <BrowserRouter>
-        <Header></Header>
+        <Header2/>
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signUp" element={<SignUp />} />
