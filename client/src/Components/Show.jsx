@@ -17,7 +17,6 @@ function Show() {
     return data._id === USERid;
   });
 
-
   const [basicInfo1, setBasicInfo] = useState({});
   const [education1, setEducation] = useState([]);
   const [workExperience1, setWorkExperience] = useState([]);
