@@ -57,7 +57,7 @@ const ResumeBuilder = () => {
     console.log("Saving resume");
     // console.log(fullName);
     await axios
-      .post("http://localhost:3002/api/v1/user/userResume", userData)
+      .post("https://resume-builder-backend-l6mu.onrender.com/api/v1/user/userResume", userData)
       .then((res) => {
         console.log("saved");
         console.log(res);
